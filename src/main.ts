@@ -1,4 +1,5 @@
 import { createApp } from "vue";
+import "./index.scss"
 import App from "./App.vue";
 import Home from "./views/Home.vue"
 import Doc from "./views/Doc.vue"
