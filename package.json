@@ -1,0 +1,19 @@
+{
+  "name": "vui",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "vue": "^3.0.0-beta.12",
+    "vue-router": "4.0.0-rc.3"
+  },
+  "devDependencies": {
+    "vite": "^0.15.3",
+    "@vue/compiler-sfc": "^3.0.0-beta.12"
+  },
+  "keywords": []
+}
