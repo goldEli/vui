@@ -5,8 +5,8 @@
       <h1>VUE</h1>
       <h2>UI components base on vue 3.0</h2>
       <p class="actions">
-        <a>GitHub</a>
-        <a>开始</a>
+        <a href="https://github.com/goldEli/vui">GitHub</a>
+        <router-link to="doc">开始</router-link>
       </p>
     </div>
   </div>
