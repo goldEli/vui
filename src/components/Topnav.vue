@@ -1,11 +1,11 @@
 <template>
   <div class="topnav">
-    <div @click="toggleVisible" class="logo">LOGO</div>
+    <div class="logo">LOGO</div>
     <ul class="menu">
       <li>菜单1</li>
       <li>菜单2</li>
     </ul>
-    <span class="toggleAside"></span>
+    <span @click="toggleVisible" class="toggleAside"></span>
   </div>
 </template>
 <script lang="ts">
@@ -45,7 +45,7 @@ export default {
     }
   }
   > .toggleAside {
-    display: inline-block;
+    display: none;
     width: 24px;
     height: 24px;
     background: red;
@@ -60,6 +60,9 @@ export default {
     }
     > .logo {
       margin: 0 auto;
+    }
+    > .toggleAside {
+      display: inline-block;
     }
   }
 }
