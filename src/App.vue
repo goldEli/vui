@@ -3,8 +3,13 @@
 </template>
 
 <script>
+import {provide, reactive, ref} from "vue"
 export default {
-  naem: "App",
+  name: "App",
+  setup() {
+    const menuVisible = ref(true)
+    provide("menuVisible", menuVisible)
+  }
 };
 </script>
 
