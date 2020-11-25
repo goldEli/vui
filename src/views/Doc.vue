@@ -66,11 +66,11 @@ export default {
   > main {
     flex-grow: 1;
     padding: 16px;
-    background: lightgreen;
+    background: #f0efeb;
   }
 }
 aside {
-  background: lightblue;
+  background: #fff1e6;
   width: 150px;
   padding: 16px;
   position: fixed;
