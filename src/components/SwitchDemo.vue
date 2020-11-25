@@ -1,5 +1,5 @@
 <template>
-  <Switch :value="value" @input="value = $event" />
+  <Switch :value="value" v-model:value="value" />
 </template>
 <script  lang="ts">
 import { ref } from "vue";
