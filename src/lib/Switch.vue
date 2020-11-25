@@ -29,18 +29,18 @@ button {
   border-radius: $h/2;
   position: relative;
   cursor: pointer;
-}
-button.checked {
-  background: #cb997e;
-}
-button.checked > span {
-  left: calc(100% - #{$h2} - 2px);
-}
-button:focus {
-  outline: none;
-}
-button.checked > span {
-  left: calc(100% - #{$h2} - 2px);
+  &.checked {
+    background: #cb997e;
+  }
+  &.checked > span {
+    left: calc(100% - #{$h2} - 2px);
+  }
+  &:focus {
+    outline: none;
+  }
+  &.checked > span {
+    left: calc(100% - #{$h2} - 2px);
+  }
 }
 span {
   position: absolute;
