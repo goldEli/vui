@@ -12,9 +12,19 @@ button {
   background: blue;
   border-radius: $h/2;
   position: relative;
+  cursor: pointer;
+}
+button:checked {
+  background: blue;
+}
+button:checked > span {
+  left: calc(100% - #{$h2} - 2px);
+}
+button:focus {
+  outline: none;
 }
 button:hover > span {
-  left: calc(100% - #{$h2} - 2px)
+  left: calc(100% - #{$h2} - 2px);
 }
 span {
   position: absolute;
@@ -24,5 +34,6 @@ span {
   width: $h2;
   background: white;
   border-radius: $h2 / 2;
+  transition: left 250ms;
 }
 </style>
