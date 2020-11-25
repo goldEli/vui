@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="box">
     <Topnav />
     <div class="banner">
       <h1>VUE</h1>
@@ -18,13 +18,20 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+.box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
 .banner {
   padding: 100px 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: lightgreen;
+  background: #fff1e6;
   > .actions {
     padding: 8px 0;
     a {
