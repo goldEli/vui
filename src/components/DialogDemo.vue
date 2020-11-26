@@ -1,7 +1,23 @@
 <template>
   <div>Dialog 示例</div>
   <Button @click="toggle">open</Button>
-  <Dialog v-model:visible="visible" :closeOnClickOverlay="false" :ok="ok" :cancel="cancel"></Dialog>
+  <Dialog
+    v-model:visible="visible"
+    :closeOnClickOverlay="false"
+    :ok="ok"
+    :cancel="cancel"
+  >
+    <template v-slot:title> 
+      <h5>this is title</h5>
+    </template>
+    <template v-slot:content>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+      <div>content</div>
+    </template>
+  </Dialog>
 </template> 
 <script lang="ts">
 import Dialog from "../lib/Dialog.vue";
@@ -18,17 +34,15 @@ export default {
       visible.value = true;
     };
     const ok = () => {
-      return true
-    }
-    const cancle = () => {
-
-    }
+      return true;
+    };
+    const cancle = () => {};
 
     return {
       visible,
       toggle,
       ok,
-      cancle
+      cancle,
     };
   },
 };
