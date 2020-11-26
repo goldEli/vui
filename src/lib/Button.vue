@@ -1,5 +1,5 @@
 <template>
-  <button class="vui-button" :class="{ [`theme-${theme}`]: theme }">
+  <button class="vui-button" :class="{ [`vui-theme-${theme}`]: theme }">
     <slot />
   </button>
 </template> 

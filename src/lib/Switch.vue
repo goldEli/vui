@@ -1,5 +1,5 @@
 <template>
-  <button @click="toggle" :class="{ checked: value }"><span></span></button>
+  <button class="vui-switch" @click="toggle" :class="{ 'vui-checked': value }"><span></span></button>
 </template>
 <script lang="ts">
 import { ref } from "vue";
@@ -21,7 +21,7 @@ export default {
 <style lang="scss" scoped>
 $h: 22px;
 $h2: $h - 4px;
-button {
+.vui-switch {
   height: $h;
   width: $h * 2;
   border: none;
@@ -29,16 +29,16 @@ button {
   border-radius: $h/2;
   position: relative;
   cursor: pointer;
-  &.checked {
+  &.vui-checked {
     background: #cb997e;
   }
-  &.checked > span {
+  &.vui-checked > span {
     left: calc(100% - #{$h2} - 2px);
   }
   &:focus {
     outline: none;
   }
-  &.checked > span {
+  &.vui-checked > span {
     left: calc(100% - #{$h2} - 2px);
   }
 }
