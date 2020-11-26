@@ -2,10 +2,16 @@
   "name": "vui",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://github.com/goldEli/vui",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/goldEli/vui"
+  },
   "scripts": {
     "dev": "vite",
     "start": "vite",
-    "build": "vite build --base=./",
+    "build": "vite build",
+    "githubPage_build": "vite build --base=/vui",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
