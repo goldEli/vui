@@ -1,5 +1,5 @@
 <template>
-  <h3>Dialog 示例</h3>
+  <h1>Basic</h1>
   <Button @click="toggle">open</Button>
   <Dialog
     v-model:visible="visible"
@@ -18,9 +18,9 @@
       <div>content</div>
     </template>
   </Dialog>
-  <h3>直接打开 Dialog</h3>
+  <h1>Open diectly</h1>
 
-  <Button @click="open">open directly</Button>
+  <Button @click="open">open</Button>
 </template> 
 <script lang="ts">
 import Dialog from "../lib/Dialog.vue";
@@ -42,7 +42,7 @@ export default {
     const open = () => {
       openDailog({
         title: "open directly",
-        content: "123"
+        content: "123",
       });
     };
     return {
