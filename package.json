@@ -11,7 +11,7 @@
     "dev": "vite",
     "start": "vite",
     "build": "vite build",
-    "githubPage_build": "vite build --base=/vui",
+    "gp_build": "vite build --base=/vui --assetsDir=",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
