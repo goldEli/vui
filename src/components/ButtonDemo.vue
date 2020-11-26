@@ -11,6 +11,10 @@
   <Button level="normal">normal</Button>
   <Button level="danger">danger</Button>
   <Button level="main">main</Button>
+  <h1>disabled</h1>
+  <Button disabled>disabled</Button>
+  <Button theme="link" disabled>disabled link</Button>
+  <Button theme="text" disabled>disabled text</Button>
 </template> 
 <script lang="ts">
 import Button from "../lib/Button.vue";

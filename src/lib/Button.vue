@@ -1,5 +1,5 @@
 <template>
-  <button class="vui-button" :class="classes">
+  <button class="vui-button" :class="classes" :disabled="disabled">
     <slot />
   </button>
 </template> 
@@ -18,11 +18,15 @@ export default {
     },
     level: {
       type: String,
-      defualt: "normal",
+      default: "normal",
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
   },
   setup(props, context) {
-    const { theme, size, level } = props;
+    const { theme, size, level, disabled } = props;
     const classes = computed(() => {
       return {
         [`vui-theme-${theme}`]: theme,
@@ -30,7 +34,7 @@ export default {
         [`vui-level-${level}`]: level,
       };
     });
-    return { classes };
+    return { classes, disabled };
   },
 };
 </script>
@@ -40,6 +44,7 @@ $border-color: #d9d9d9;
 $color: #333;
 $blue: #cb997e;
 $red: red;
+$grey: grey;
 $radius: 4px;
 .vui-button {
   box-sizing: border-box;
@@ -117,6 +122,22 @@ $radius: 4px;
     &:focus {
       background: darken($red, 10%);
       border-color: darken($red, 10%);
+    }
+  }
+  &.vui-theme-normal {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
+      &:hover {
+        border-color: $grey;
+      }
+    }
+  }
+  &.vui-theme-link,
+  &.vui-theme-text {
+    &[disabled] {
+      cursor: not-allowed;
+      color: $grey;
     }
   }
 }
