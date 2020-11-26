@@ -9,7 +9,7 @@ export default {
   props: {
     theme: {
       type: String,
-      default: "button",
+      default: "defualt",
     },
   },
   setup(props, context) {
@@ -51,6 +51,24 @@ $radius: 4px;
   }
   &::-moz-focus-inner {
     border: 0;
+  }
+  &.vui-theme-link {
+    border-color: transparent;
+    box-shadow: none;
+    color: $blue;
+    &:hover,
+    &:focus {
+      color: lighten($blue, 10%);
+    }
+  }
+  &.vui-theme-text {
+    border-color: transparent;
+    box-shadow: none;
+    color: inherit;
+    &:hover,
+    &:focus {
+      background: darken(white, 5%);
+    }
   }
 }
 </style>

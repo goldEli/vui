@@ -1,8 +1,8 @@
 <template>
   <Button>hello</Button>
-  <Button theme="button">hello</Button>
-  <Button theme="link">hello</Button>
-  <Button theme="text">hello</Button>
+  <Button theme="default">defualt</Button>
+  <Button theme="link">link</Button>
+  <Button theme="text">text</Button>
 </template> 
 <script lang="ts">
 import Button from '../lib/Button.vue'
