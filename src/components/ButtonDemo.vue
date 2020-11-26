@@ -15,6 +15,8 @@
   <Button disabled>disabled</Button>
   <Button theme="link" disabled>disabled link</Button>
   <Button theme="text" disabled>disabled text</Button>
+  <h1>loading</h1>
+  <Button loading>loading</Button>
 </template> 
 <script lang="ts">
 import Button from "../lib/Button.vue";
