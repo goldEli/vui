@@ -1,5 +1,5 @@
 <template>
-  <div>Dialog 示例</div>
+  <h3>Dialog 示例</h3>
   <Button @click="toggle">open</Button>
   <Dialog
     v-model:visible="visible"
@@ -7,7 +7,7 @@
     :ok="ok"
     :cancel="cancel"
   >
-    <template v-slot:title> 
+    <template v-slot:title>
       <h5>this is title</h5>
     </template>
     <template v-slot:content>
@@ -18,10 +18,14 @@
       <div>content</div>
     </template>
   </Dialog>
+  <h3>直接打开 Dialog</h3>
+
+  <Button @click="open">open directly</Button>
 </template> 
 <script lang="ts">
 import Dialog from "../lib/Dialog.vue";
 import Button from "../lib/Button.vue";
+import { openDailog } from "../lib/openDailog";
 import { ref } from "vue";
 export default {
   components: {
@@ -33,16 +37,20 @@ export default {
     const toggle = () => {
       visible.value = true;
     };
-    const ok = () => {
-      return true;
-    };
+    const ok = () => {};
     const cancle = () => {};
-
+    const open = () => {
+      openDailog({
+        title: "open directly",
+        content: "123"
+      });
+    };
     return {
       visible,
       toggle,
       ok,
       cancle,
+      open,
     };
   },
 };
