@@ -1,20 +1,36 @@
 <template>
-  <button class="vui-button" :class="{ [`vui-theme-${theme}`]: theme }">
+  <button class="vui-button" :class="classes">
     <slot />
   </button>
 </template> 
 <script lang="ts">
+import { computed } from "vue";
 export default {
   inheritAttrs: false,
   props: {
     theme: {
       type: String,
-      default: "defualt",
+      default: "normal",
+    },
+    size: {
+      type: String,
+      default: "normal",
+    },
+    level: {
+      type: String,
+      defualt: "normal",
     },
   },
   setup(props, context) {
-    const { size, ...rest } = context.attrs;
-    return { size, rest };
+    const { theme, size, level } = props;
+    const classes = computed(() => {
+      return {
+        [`vui-theme-${theme}`]: theme,
+        [`vui-size-${size}`]: size,
+        [`vui-level-${level}`]: level,
+      };
+    });
+    return { classes };
   },
 };
 </script>
@@ -22,7 +38,8 @@ export default {
 $h: 32px;
 $border-color: #d9d9d9;
 $color: #333;
-$blue: #40a9ff;
+$blue: #cb997e;
+$red: red;
 $radius: 4px;
 .vui-button {
   box-sizing: border-box;
@@ -52,6 +69,8 @@ $radius: 4px;
   &::-moz-focus-inner {
     border: 0;
   }
+  &.vui-theme-normal {
+  }
   &.vui-theme-link {
     border-color: transparent;
     box-shadow: none;
@@ -68,6 +87,36 @@ $radius: 4px;
     &:hover,
     &:focus {
       background: darken(white, 5%);
+    }
+  }
+  &.vui-size-large {
+    font-size: 24px;
+    height: 48px;
+    padding: 0 16px;
+  }
+  &.vui-size-small {
+    font-size: 12px;
+    height: 20px;
+    padding: 0 4px;
+  }
+  &.vui-level-main {
+    background: $blue;
+    color: white;
+    border-color: $blue;
+    &:hover,
+    &:focus {
+      background: darken($blue, 10%);
+      border-color: darken($blue, 10%);
+    }
+  }
+  &.vui-level-danger {
+    background: $red;
+    border-color: $red;
+    color: white;
+    &:hover,
+    &:focus {
+      background: darken($red, 10%);
+      border-color: darken($red, 10%);
     }
   }
 }
