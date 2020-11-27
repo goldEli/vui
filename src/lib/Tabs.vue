@@ -4,25 +4,28 @@
     <div class="vui-tabs-nav">
       <div
         class="vui-tabs-nav-item"
-        v-for="(item, idx) in titles"
-        v-bind:key="idx"
+        v-for="{ title, key } in tabsInfo"
+        @click="selected(key)"
+        v-bind:key="key"
       >
-        {{ item }}
+        {{ title }}
       </div>
     </div>
     <div class="vui-tabs-content">
-      <component v-for="c in defaults" v-bind:is="c" v-bind:key="c"></component>
+      <component
+        v-bind:is="currentContent"
+        v-bind:key="currentContent"
+      ></component>
     </div>
   </div>
 </template>
 <script lang="ts">
-import { reactive, Ref, ref } from "vue";
+import { computed, reactive, Ref, ref } from "vue";
 import Tab from "./Tab.vue";
 export default {
   props: {
-    defaultActiveKey: {
+    selectedKey: {
       type: String,
-      default: "",
     },
   },
   setup(props, context) {
@@ -33,12 +36,21 @@ export default {
         throw new Error("Tabs's children has type which is not Tab");
       }
     }
-    const titles = defaults.map((child) => {
-      return child.props.title;
+    const tabsInfo = defaults.map((child) => {
+      return child.props;
     });
+    const currentContent = computed(() => {
+      return defaults.find((item) => item.props.key === props.selectedKey);
+    });
+    const selected = (key: string) => {
+      console.log(key);
+      context.emit("update:selectedKey", key);
+    };
     return {
       defaults,
-      titles,
+      tabsInfo,
+      currentContent,
+      selected,
     };
   },
 };
