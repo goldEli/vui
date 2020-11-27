@@ -71,6 +71,7 @@ export default {
   },
 };
 </script>
+
 <style lang="scss">
 $radius: 4px;
 $border-color: #d9d9d9;
@@ -136,3 +137,4 @@ $border-color: #d9d9d9;
     }
   }
 }
+</style>
