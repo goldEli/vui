@@ -1,18 +1,17 @@
 
 <template>
-  <div>
-    <component
-      @click="currentTab.data = c.children?.default?.()"
-      v-for="c in defaults"
-      v-bind:key="c.key"
-      v-bind:is="c"
-    ></component>
-    <div>
-      <component
-        v-for="(c, idx) in currentTab.data"
+  <div class="vui-tabs">
+    <div class="vui-tabs-nav">
+      <div
+        class="vui-tabs-nav-item"
+        v-for="(item, idx) in titles"
         v-bind:key="idx"
-        v-bind:is="c"
-      ></component>
+      >
+        {{ item }}
+      </div>
+    </div>
+    <div class="vui-tabs-content">
+      <component v-for="c in defaults" v-bind:is="c" v-bind:key="c"></component>
     </div>
   </div>
 </template>
@@ -27,27 +26,46 @@ export default {
     },
   },
   setup(props, context) {
-    // console.log(context.slots.default());
     const defaults = context.slots.default();
-    const currentTab = reactive({ data: "" });
-
-    const changeActiveKey = (event) => {
-      console.log(event.target);
-    };
 
     for (let d of defaults) {
       if (d.type !== Tab) {
         throw new Error("Tabs's children has type which is not Tab");
       }
-      if (d.key === props.defaultActiveKey) {
-        currentTab.data = d.children?.default?.();
-      }
     }
+    const titles = defaults.map((child) => {
+      return child.props.title;
+    });
     return {
       defaults,
-      currentTab,
-      changeActiveKey,
+      titles,
     };
   },
 };
 </script>
+<style lang="scss">
+$blue: #40a9ff;
+$color: #333;
+$border-color: #d9d9d9;
+.vui-tabs {
+  &-nav {
+    display: flex;
+    color: $color;
+    border-bottom: 1px solid $border-color;
+    &-item {
+      padding: 8px 0;
+      margin: 0 16px;
+      cursor: pointer;
+      &:first-child {
+        margin-left: 0;
+      }
+      &.selected {
+        color: $blue;
+      }
+    }
+  }
+  &-content {
+    padding: 8px 0;
+  }
+}
+</style>
