@@ -6,7 +6,7 @@
       <h2>UI components base on vue 3.0</h2>
       <p class="actions">
         <a href="https://github.com/goldEli/vui">GitHub</a>
-        <router-link to="doc">开始</router-link>
+        <router-link to="doc">Getting Started</router-link>
       </p>
       <div class="features">
         <ul>
@@ -54,13 +54,13 @@ export default {
     padding: 8px 0;
     a {
       margin: 0 8px;
-      background: #fff;
+      background: #eddcd2;
       display: inline-block;
-      $h: 28px;
+      $h: 36px;
       height: $h;
       line-height: $h;
-      border-radius: $h/2;
-      padding: 0 8px;
+      border-radius: 8px;
+      padding: 0 12px;
     }
   }
 }
