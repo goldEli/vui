@@ -22,7 +22,7 @@
               <use xlink:href="#icon-typescript"></use>
             </svg>
             <h3>Base-on Typescript</h3>
-            <p>Development is more secure and conveninent</p>
+            <p>More secure and conveninent</p>
           </li>
         </ul>
       </div>
