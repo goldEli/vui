@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import "./lib/vui.scss"
 import "./index.scss";
+import "./lib/icon"
 import App from "./App.vue";
 import router from "./router";
 
