@@ -1,15 +1,20 @@
 <template>
   <div class="topnav">
-    <div class="logo">
+    <router-link to="/" class="logo">
       <svg class="icon" aria-hidden="true">
         <use xlink:href="#icon-vui"></use>
       </svg>
-    </div>
+    </router-link>
     <ul class="menu">
-      <li>菜单1</li>
-      <li>菜单2</li>
+      <li>
+        <router-link to="/doc">文档</router-link>
+      </li>
     </ul>
-    <span @click="toggleVisible" class="toggleAside"></span>
+    <span @click="toggleVisible" class="toggleAside">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-nav"></use>
+      </svg>
+    </span>
   </div>
 </template>
 <script lang="ts">
@@ -59,7 +64,6 @@ export default {
     display: none;
     width: 24px;
     height: 24px;
-    background: red;
     position: absolute;
     left: 16px;
     top: 50%;
