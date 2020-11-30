@@ -52,6 +52,9 @@ export default {
       height: 36px;
     }
   }
+  > .logo:hover{
+    border-bottom: none;
+  }
   > .menu {
     display: flex;
     white-space: nowrap;
