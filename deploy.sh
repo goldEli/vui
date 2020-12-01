@@ -1,4 +1,4 @@
-git checkout relase &&
+git checkout release &&
 git pull --rebase &&
 git rebase main &&
 git push --force &&
