@@ -12,4 +12,4 @@ npm install vui
 yarn add vui
 ```
 
-下一节：[开始使用](#/doc/get-started)
+下一节：[开始使用](#/doc/getStarted)
