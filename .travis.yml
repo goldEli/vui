@@ -7,7 +7,7 @@ cache:
 env:
   - CI=true 
 script:
-  - npm run gp_build
+  - npm run build
 deploy:
   provider: pages
   skip_cleanup: true
